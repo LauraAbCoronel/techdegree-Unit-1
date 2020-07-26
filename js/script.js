@@ -64,9 +64,9 @@ const quotes = [
 ];
 
 // 'getRandomNumber' function takes in the maximum number the random number can be
-// return: a random number between 0 and highNumber
+// return: a random number between 0 and highNumber but not including the high number
 function getRandomNumber(highNumber) {
-  randomNumber = Math.floor(Math.random() * highNumber + 1);
+  randomNumber = Math.floor(Math.random() * highNumber);
   return randomNumber
 }
 
@@ -75,7 +75,7 @@ function getRandomNumber(highNumber) {
  * return: a random quote in the quotes array.
 ***/
 function getRandomQuote(quoteArray) {
-  randomIndex = getRandomNumber(quoteArray.length - 1);
+  randomIndex = getRandomNumber(quoteArray.length);
   return quoteArray[randomIndex]
 }
 
@@ -102,9 +102,9 @@ function printQuote() {
   html += '</p>';
 
   //Calls the getRandomNumber function to get random red green blue values
-  const red = getRandomNumber(255);
-  const green = getRandomNumber(255);
-  const blue = getRandomNumber(255);
+  const red = getRandomNumber(256);
+  const green = getRandomNumber(256);
+  const blue = getRandomNumber(256);
   
   // Changes the background color of the webpage
   document.body.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
