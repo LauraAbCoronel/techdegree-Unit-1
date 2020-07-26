@@ -90,13 +90,13 @@ function printQuote() {
     <p class="quote"> ${quote.quote} </p>
     <p class="source"> ${quote.source}
   `;
-  if (quote.citation !== undefined) {
+  if (quote.citation !== undefined) { // checks if the quote has a citation property
     html += `<span class="citation"> ${quote.citation} </span>`;
   }
-  if (quote.year !== undefined) {
+  if (quote.year !== undefined) { // checks if the quote has a year property
     html += `<span class="year"> ${quote.year} </span>`;
   }
-  if(quote.tag !== undefined) {
+  if(quote.tag !== undefined) { // checks if the quote had a tag property and if so joins the tag array
     html += `<span class="tag"> ${quote.tag.join(', ')} </span>`;
   }
   html += '</p>';
